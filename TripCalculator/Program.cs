@@ -11,15 +11,12 @@ Trip information: This calculates how many gallons of gas are needed, and the to
 using System.Runtime.ConstrainedExecution;
 
 System.Console.Write("What was the total trip in miles? ");
-System.Console.WriteLine("");
 int TotalTripMiles = Convert.ToInt32 (Console.ReadLine());
 System.Console.WriteLine();
 System.Console.Write("How many MPG does your car get? ");
-System.Console.WriteLine();
 int MilesPerGallon = Convert.ToInt32 (Console.ReadLine());
 System.Console.WriteLine();
 System.Console.Write("How much does gas cost in your area. (price per gallon please!) ");
-System.Console.WriteLine();
 double GasCost = Convert.ToDouble (Console.ReadLine());
 System.Console.WriteLine();
 double GallonsNeeded = TotalTripMiles / (double)MilesPerGallon;
@@ -27,19 +24,17 @@ double FuelCost = GallonsNeeded * (double)GasCost;
 System.Console.WriteLine($"Gallons needed: {GallonsNeeded.ToString("F2")}");
 System.Console.WriteLine();
 System.Console.WriteLine($"Fuel cost: {FuelCost.ToString("C")}");
+System.Console.WriteLine();
 /*
 Pizza party: This calculates how many slices there will be, how many each person will get, and the total cost of all pizzas.
 */
 System.Console.Write("How many people will be going? ");
-System.Console.WriteLine();
 int PeopleGoing = Convert.ToInt32 (Console.ReadLine());
 System.Console.WriteLine();
 System.Console.Write("How many pizzas do you need? ");
-System.Console.WriteLine();
 int PizzaNeeded = Convert.ToInt32 (Console.ReadLine());
 System.Console.WriteLine();
 System.Console.Write("How much does each pizza cost? ");
-System.Console.WriteLine();
 double PerPizzaCost = Convert.ToDouble (Console.ReadLine());
 System.Console.WriteLine();
 const int PizzaSlices = 8;
@@ -51,15 +46,14 @@ System.Console.WriteLine();
 System.Console.WriteLine($"Slices per person: {SLicesPerPerson.ToString("F1")}");
 System.Console.WriteLine();
 System.Console.WriteLine($"Pizza cost: {PizzaCost.ToString("C")}");
+System.Console.WriteLine();
 /*
 Payday: This calculates your gross pay, your tax withheld, and your take home pay. This is like a check stub.
 */
 System.Console.Write("How many hours have you worked this week? (Whole number please!) ");
-System.Console.WriteLine();
 int HoursWorked = Convert.ToInt32 (Console.ReadLine());
 System.Console.WriteLine();
 System.Console.Write("How much do you make per hour? ");
-System.Console.WriteLine();
 double HourlyRate = Convert.ToDouble (Console.ReadLine());
 System.Console.WriteLine();
 const double TaxRate = 0.18;
@@ -111,7 +105,7 @@ System.Console.WriteLine("");
 System.Console.WriteLine("");
 System.Console.WriteLine("=== Part 3: Paycheck ===");
 System.Console.WriteLine($"Hours worked this week: {HoursWorked}");
-System.Console.WriteLine($"Hourly rate: {HourlyRate}");
+System.Console.WriteLine($"Hourly rate: {HourlyRate.ToString("F2")}");
 System.Console.WriteLine("");
 System.Console.WriteLine("");
 System.Console.WriteLine($"Gross pay: {GrossPay.ToString("C")}");
