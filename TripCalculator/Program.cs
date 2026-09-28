@@ -8,113 +8,161 @@
 /*
 Trip information: This calculates how many gallons of gas are needed, and the total fuel cost.
 */
-using System.Runtime.ConstrainedExecution;
+
 
 System.Console.Write("What was the total trip in miles? ");
-int TotalTripMiles = Convert.ToInt32 (Console.ReadLine());
+int totalTripMiles = Convert.ToInt32 (Console.ReadLine());
 System.Console.WriteLine();
+
+
 System.Console.Write("How many MPG does your car get? ");
-int MilesPerGallon = Convert.ToInt32 (Console.ReadLine());
+int milesPerGallon = Convert.ToInt32 (Console.ReadLine());
 System.Console.WriteLine();
+
+
 System.Console.Write("How much does gas cost in your area. (price per gallon please!) ");
-double GasCost = Convert.ToDouble (Console.ReadLine());
+double gasCost = Convert.ToDouble (Console.ReadLine());
 System.Console.WriteLine();
-double GallonsNeeded = TotalTripMiles / (double)MilesPerGallon;
-double FuelCost = GallonsNeeded * (double)GasCost;
-System.Console.WriteLine($"Gallons needed: {GallonsNeeded.ToString("F2")}");
+
+
+double gallonsNeeded = totalTripMiles / (double)milesPerGallon;
+double fuelCost = gallonsNeeded * (double)gasCost;
+System.Console.WriteLine($"Gallons needed: {gallonsNeeded.ToString("F2")}");
 System.Console.WriteLine();
-System.Console.WriteLine($"Fuel cost: {FuelCost.ToString("C")}");
+
+
+System.Console.WriteLine($"Fuel cost: {fuelCost.ToString("C")}");
 System.Console.WriteLine();
 /*
 Pizza party: This calculates how many slices there will be, how many each person will get, and the total cost of all pizzas.
 */
 System.Console.Write("How many people will be going? ");
-int PeopleGoing = Convert.ToInt32 (Console.ReadLine());
+int peopleGoing = Convert.ToInt32 (Console.ReadLine());
 System.Console.WriteLine();
+
+
 System.Console.Write("How many pizzas do you need? ");
-int PizzaNeeded = Convert.ToInt32 (Console.ReadLine());
+int pizzaNeeded = Convert.ToInt32 (Console.ReadLine());
 System.Console.WriteLine();
+
+
 System.Console.Write("How much does each pizza cost? ");
-double PerPizzaCost = Convert.ToDouble (Console.ReadLine());
+double perPizzaCost = Convert.ToDouble (Console.ReadLine());
 System.Console.WriteLine();
+
+
 const int PizzaSlices = 8;
-int TotalSlices = PizzaNeeded * PizzaSlices;
-double SLicesPerPerson = TotalSlices / (double) PeopleGoing;
-double PizzaCost = PizzaNeeded * (double) PerPizzaCost;
-System.Console.WriteLine($"Total slices: {TotalSlices}");
+int totalSlices = pizzaNeeded * PizzaSlices;
+double slicesPerPerson = totalSlices / (double) peopleGoing;
+double pizzaCost = pizzaNeeded * (double) perPizzaCost;
+System.Console.WriteLine($"Total slices: {totalSlices}");
 System.Console.WriteLine();
-System.Console.WriteLine($"Slices per person: {SLicesPerPerson.ToString("F1")}");
+
+
+System.Console.WriteLine($"Slices per person: {slicesPerPerson.ToString("F1")}");
 System.Console.WriteLine();
-System.Console.WriteLine($"Pizza cost: {PizzaCost.ToString("C")}");
+
+
+System.Console.WriteLine($"Pizza cost: {pizzaCost.ToString("C")}");
 System.Console.WriteLine();
+
+
 /*
 Payday: This calculates your gross pay, your tax withheld, and your take home pay. This is like a check stub.
 */
 System.Console.Write("How many hours have you worked this week? (Whole number please!) ");
-int HoursWorked = Convert.ToInt32 (Console.ReadLine());
+int hoursWorked = Convert.ToInt32 (Console.ReadLine());
 System.Console.WriteLine();
+
+
 System.Console.Write("How much do you make per hour? ");
-double HourlyRate = Convert.ToDouble (Console.ReadLine());
+double hourlyRate = Convert.ToDouble (Console.ReadLine());
 System.Console.WriteLine();
-const double TaxRate = 0.18;
-double GrossPay = HoursWorked * HourlyRate;
-double TaxWithheld = GrossPay * TaxRate;
-double TakeHome = GrossPay - TaxWithheld;
-System.Console.WriteLine($"Gross pay: {GrossPay.ToString("C")}");
+
+
+const double taxRate = 0.18;
+double grossPay = hoursWorked * hourlyRate;
+double taxWithheld = grossPay * taxRate;
+double takeHome = grossPay - taxWithheld;
+System.Console.WriteLine($"Gross pay: {grossPay.ToString("C")}");
 System.Console.WriteLine();
-System.Console.WriteLine($"Tax withheld: {TaxWithheld.ToString("C")}");
+
+
+System.Console.WriteLine($"Tax withheld: {taxWithheld.ToString("C")}");
 System.Console.WriteLine();
-System.Console.WriteLine($"Take home pay: {TakeHome.ToString("C")}");
+
+
+System.Console.WriteLine($"Take home pay: {takeHome.ToString("C")}");
 System.Console.WriteLine();
 /*
 The whole thing: This calculates information about your whole trip, including the total trip cost, the per person cost, how much money you actualy get per hour, and the hours you need to work to cover your share of the trip.
 */
-double TripTotal = FuelCost + PizzaCost;
-double CostPerPerson = TripTotal / PeopleGoing;
-double TakeHomePayPerHour = TakeHome / HoursWorked;
-double HoursNeeded = CostPerPerson / TakeHomePayPerHour;
-System.Console.WriteLine($"Trip total: {TripTotal.ToString("C")}");
+double tripTotal = fuelCost + pizzaCost;
+double costPerPerson = tripTotal / peopleGoing;
+double takeHomePayPerHour = takeHome / hoursWorked;
+double hoursNeeded = costPerPerson / takeHomePayPerHour;
+System.Console.WriteLine($"Trip total: {tripTotal.ToString("C")}");
 System.Console.WriteLine();
-System.Console.WriteLine($"Cost per person: {CostPerPerson.ToString("C")}");
+
+
+System.Console.WriteLine($"Cost per person: {costPerPerson.ToString("C")}");
 System.Console.WriteLine();
-System.Console.WriteLine($"Take home pay per hour: {TakeHomePayPerHour.ToString("C")}");
+
+
+System.Console.WriteLine($"Take home pay per hour: {takeHomePayPerHour.ToString("C")}");
 System.Console.WriteLine();
-System.Console.WriteLine($"Hours you must work to cover your share: {HoursNeeded.ToString("F2")}");
+
+
+System.Console.WriteLine($"Hours you must work to cover your share: {hoursNeeded.ToString("F2")}");
 System.Console.WriteLine("");
 System.Console.WriteLine("");
+
+
 System.Console.WriteLine("=== Part 1: Road Trip ===");
-System.Console.WriteLine("Round trip miles: " + TotalTripMiles );
-System.Console.WriteLine($"Miles per gallon: {MilesPerGallon}");
-System.Console.WriteLine($"Price per gallon: {GasCost}");
+System.Console.WriteLine("Round trip miles: " + totalTripMiles );
+System.Console.WriteLine($"Miles per gallon: {milesPerGallon}");
+System.Console.WriteLine($"Price per gallon: {gasCost}");
 System.Console.WriteLine("");
 System.Console.WriteLine("");
-System.Console.WriteLine($"Gallons needed: {GallonsNeeded.ToString("F2")}");
-System.Console.WriteLine($"Fuel cost: {FuelCost.ToString("C")}");
+
+
+System.Console.WriteLine($"Gallons needed: {gallonsNeeded.ToString("F2")}");
+System.Console.WriteLine($"Fuel cost: {fuelCost.ToString("C")}");
 System.Console.WriteLine("");
 System.Console.WriteLine("");
+
+
 System.Console.WriteLine("=== Part 2: Pizza Party ===");
-System.Console.WriteLine($"How many people are going: {PeopleGoing}");
-System.Console.WriteLine($"How man pizzas: {PizzaNeeded}");
-System.Console.WriteLine($"Price per pizza: {PerPizzaCost.ToString("C")}");
+System.Console.WriteLine($"How many people are going: {peopleGoing}");
+System.Console.WriteLine($"How man pizzas: {pizzaNeeded}");
+System.Console.WriteLine($"Price per pizza: {perPizzaCost.ToString("C")}");
 System.Console.WriteLine("");
 System.Console.WriteLine("");
-System.Console.WriteLine($"Total slices: {TotalSlices}");
-System.Console.WriteLine($"Slices per person: {SLicesPerPerson.ToString("F1")}");
-System.Console.WriteLine($"Pizza cost: {PizzaCost.ToString("C")}");
+
+
+System.Console.WriteLine($"Total slices: {totalSlices}");
+System.Console.WriteLine($"Slices per person: {slicesPerPerson.ToString("F1")}");
+System.Console.WriteLine($"Pizza cost: {pizzaCost.ToString("C")}");
 System.Console.WriteLine("");
 System.Console.WriteLine("");
+
+
 System.Console.WriteLine("=== Part 3: Paycheck ===");
-System.Console.WriteLine($"Hours worked this week: {HoursWorked}");
-System.Console.WriteLine($"Hourly rate: {HourlyRate.ToString("F2")}");
+System.Console.WriteLine($"Hours worked this week: {hoursWorked}");
+System.Console.WriteLine($"Hourly rate: {hourlyRate.ToString("F2")}");
 System.Console.WriteLine("");
 System.Console.WriteLine("");
-System.Console.WriteLine($"Gross pay: {GrossPay.ToString("C")}");
-System.Console.WriteLine($"Tax withheld: {TaxWithheld.ToString("C")}");
-System.Console.WriteLine($"Take home pay: {TakeHome.ToString("C")}");
+
+
+System.Console.WriteLine($"Gross pay: {grossPay.ToString("C")}");
+System.Console.WriteLine($"Tax withheld: {taxWithheld.ToString("C")}");
+System.Console.WriteLine($"Take home pay: {takeHome.ToString("C")}");
 System.Console.WriteLine("");
 System.Console.WriteLine("");
+
+
 System.Console.WriteLine("=== Part 4: The Whole Trip ===");
-System.Console.WriteLine($"Trip total: {TripTotal.ToString("C")}");
-System.Console.WriteLine($"Cost per person {CostPerPerson.ToString("C")}");
-System.Console.WriteLine($"Take home pay per hour: {TakeHomePayPerHour.ToString("C")}");
-System.Console.WriteLine($"Hours you must work to cover your share: {HoursNeeded.ToString("F2")}");
+System.Console.WriteLine($"Trip total: {tripTotal.ToString("C")}");
+System.Console.WriteLine($"Cost per person {costPerPerson.ToString("C")}");
+System.Console.WriteLine($"Take home pay per hour: {takeHomePayPerHour.ToString("C")}");
+System.Console.WriteLine($"Hours you must work to cover your share: {hoursNeeded.ToString("F2")}");
